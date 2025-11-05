@@ -16,7 +16,7 @@
 				<ToolbarSpacer id="_IDGenToolbarSpacer1" />
 				<Button id="_IDGenButton1"  text="Open Dialog" press="onOpenPressed"/>
 			</OverflowToolbar>
-		</headerToolbar>
+		</headerToolbar> 
 		<columns>
 			<Column id="_IDGenColumn4" >
 				<Text id="_IDGenText9"  text="{i18n>connNo}" />
