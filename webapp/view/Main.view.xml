@@ -31,7 +31,7 @@
 			</Column>
 		</columns>
 		<items>
-			<ColumnListItem id="_IDGenColumnListItem" vAlign="Middle" type="Navigation">
+			<ColumnListItem id="_IDGenColumnListItem" vAlign="Middle" type="Navigation" press="onListItemPress" >
 				<cells>
 					<Text id="_IDGenText4" text="{flightDataModel>Carrid}" wrapping="false" />
 					<Text id="_IDGenText5" text="{flightDataModel>Carrname}" wrapping="false"/>

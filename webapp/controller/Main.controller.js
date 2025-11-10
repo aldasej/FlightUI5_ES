@@ -5,7 +5,7 @@ sap.ui.define([
 
     return Controller.extend("flightui5v2.controller.Main", {
         onInit() {
-            
+
             var oFlightJSONModel = new sap.ui.model.json.JSONModel();
             var that = this;
             //read the data from Back End (READ_GET_ENTITYSET)
@@ -22,6 +22,12 @@ sap.ui.define([
                     that.getView().setModel(oFlightJSONModel, "flightDataModel");
                 },
                 error: function (oerror) { },
+            });
+        },
+
+        onListItemPress: function (oItem) {
+            this.getOwnerComponent().getRouter().navTo("Detail", {
+                Carrid: oItem.getSource().getBindingContext("flightDataModel").getProperty().Carrid
             });
         }
     });

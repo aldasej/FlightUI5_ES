@@ -104,12 +104,22 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "pattern": "Detail/{Carrid}",
+          "name": "Detail",
+          "target": "Detail"
         }
       ],
       "targets": {
         "TargetMain": {
-          "id": "Detail",
-          "name": "Detail"
+          "id": "Main",
+          "name": "Main"
+        },
+         "Detail": {
+          "viewId": "Detail",
+          "viewName": "Detail",
+          "viewLevel": 1
         }
       }
     },
