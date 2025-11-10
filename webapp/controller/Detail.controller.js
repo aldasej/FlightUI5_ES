@@ -9,7 +9,7 @@ sap.ui.define([
         formatter: Formatter,
         
         onInit() {
-            // debugger
+            debugger
             this.getOwnerComponent().getRouter().getRoute("Detail").attachPatternMatched(this._onObjectMatched, this);
             this.getView().getModel("FlghDetailModel");
         },
