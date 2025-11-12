@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "flightui5v2/formatter/Formatter",
-], (Controller, Formatter) => {
+    "sap/m/MessageToast"
+], (Controller, Formatter, MessageToast) => {
     "use strict";
 
     return Controller.extend("flightui5v2.controller.Detail", {

@@ -13,7 +13,7 @@
 			<OverflowToolbar id="_IDGenOverflowToolbar">
 				<Title id="_IDGenTitle" text="{Products}" level="H2"/>
 				<ToolbarSpacer id="_IDGenToolbarSpacer"/>
-				<Button id="_IDGenButton" text="Open Dialog" press="onOpenPressed"/>
+				<Button id="button1" text="Create" press="onAddNewRecord" />
 			</OverflowToolbar>
 		</headerToolbar>
 		<columns>

@@ -20,6 +20,17 @@ sap.ui.define([
             var year = date.getFullYear();
 
             return day + "." + month + "." + year;
+        },
+
+        getCarrierLogo: function (sCarrid) {
+            switch (sCarrid) {
+                case "LH": // Lufthansa
+                    return "img/lufthansa.png";
+                case "AB": // Air Berlin
+                    return "img/airberlin.svg.png";
+                default:
+                    return "img/default_logo.png";
+            }
         }
     };
 });
