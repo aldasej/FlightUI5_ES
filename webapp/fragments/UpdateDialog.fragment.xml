@@ -1,0 +1,67 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog
+        id="dialog_u"
+        title="Update Airline"
+    >
+        <content>
+            <form:SimpleForm id="simpleForm_u">
+                <form:content>
+                    <Label
+                        id="label"
+                        text="{i18n>Carrid}"
+                    />
+                    <Input
+                        id="input1"
+                        editable="false"
+                        value="{oPayloadModel>/oPayload/Carrid}"
+                    />
+                    <Label
+                        id="label2"
+                        text="{i18n>Carrname}"
+                    />
+                    <Input
+                        id="input2"
+                        editable="true"
+                        value="{oPayloadModel>/oPayload/Carrname}"
+                    />
+                    <Label
+                        id="label3"
+                        text="{i18n>Currcode}"
+                    />
+                    <Input
+                        id="input3"
+                        editable="true"
+                        value="{oPayloadModel>/oPayload/Currcode}"
+                    />
+                    <Label
+                        id="label4"
+                        text="{i18n>Url}"
+                    />
+                    <Input
+                        id="input4"
+                        editable="true"
+                        value="{oPayloadModel>/oPayload/Url}"
+                    />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button
+                id="save"
+                text="Save"
+                press="onSaveRecord"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="cancel"
+                text="Cancel"
+                press="onCancelRow"
+            />
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

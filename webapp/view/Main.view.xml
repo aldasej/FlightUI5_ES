@@ -3,6 +3,7 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
     <Table id="_IDGenTable1"
+	    mode="SingleSelectLeft"
 		items="{
 			path: 'flightDataModel>/',
 			sorter: {
@@ -14,6 +15,7 @@
 				<Title id="_IDGenTitle" text="{Products}" level="H2"/>
 				<ToolbarSpacer id="_IDGenToolbarSpacer"/>
 				<Button id="button1" text="Create" press="onAddNewRecord" />
+				<Button id="button2" text="Update" press="onUpdateRecord" />
 			</OverflowToolbar>
 		</headerToolbar>
 		<columns>

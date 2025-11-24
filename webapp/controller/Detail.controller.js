@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "flightui5v2/formatter/Formatter",
-    "sap/m/MessageToast"
-], (Controller, Formatter, MessageToast) => {
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+], (Controller, Formatter, MessageToast, MessageBox) => {
     "use strict";
 
     return Controller.extend("flightui5v2.controller.Detail", {
@@ -41,5 +42,40 @@ sap.ui.define([
                     error: function (oerror) { },
                 });
             },
+
+
+            onDeletePress: function (oEvent) {
+                var oButton   = oEvent.getSource();
+                var oContext  = oButton.getBindingContext("FlghDetailModel");
+                var oFlight   = oContext.getObject();
+
+                var that = this;
+                MessageBox.confirm(
+                    "Delete flight " + oFlight.Connid + " of airline " + oFlight.Carrid + "?",
+                    {
+                        title: "Confirm Deletion",
+                        onClose: function (sAction) {
+                            if (sAction === MessageBox.Action.OK) {
+                                var oModel = that.getView().getModel();
+
+                                oModel.callFunction("/deleteEntry", {
+                                    method: "POST",
+                                    urlParameters: {
+                                        Carrid: oFlight.Carrid,
+                                        Connid: oFlight.Connid
+                                    },
+                                    success: function () {
+                                        MessageToast.show("Flight deleted successfully");
+                                        that.byId("_IDGenTable").getBinding("items").refresh();
+                                    },
+                                    error: function (oError) {
+                                        MessageBox.error("Deletion failed: " + oError.message);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                );
+            }
     });
 });
